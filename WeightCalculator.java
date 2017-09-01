@@ -3,16 +3,20 @@ public class WeightCalculator
 	public static void main (String [] args)
 	{
 		double earthWeight = Double.parseDouble(args [0]);
-		double marsWeight = (earthWeight * .38);
-		double jupiterWeight = (earthWeight * 2.38);
-		double venusWight = (earthWeight * .91);
-		double saturnWeight = (earthWeight * 1.06);
 	
-		System.out.println("Earth: " + earthWeight);
-		System.out.println("Mars: " + marsWeight);
-		System.out.println("Jupiter: " + jupiterWeight);
-		System.out.println("Venus: " + venusWight);
-		System.out.println("Saturn: " + saturnWeight);
+		
+		printPlanet(earthWeight, 0.38, "Mars");
+		printPlanet(earthWeight, 2.38, "Jupiter");
+		printPlanet(earthWeight, .91, "Venus");
+		printPlanet(earthWeight, 1.06, "Saturn");
+		
+		
+	}
+	
+	public static void printPlanet(double earth, double factor, String planet)
+	{
+		double weight = earth * factor; 
+		System.out.println(planet + ": " + weight);
 		
 	}
 }
